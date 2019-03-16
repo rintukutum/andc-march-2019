@@ -20,5 +20,12 @@ for(i in 1:nRows){
 		print(mat[i,j])
 	}
 }
+
+# row sum
+apply(mat,1,sum)
+
+# col sum
+apply(mat,2,sum)
+
 ```
 
