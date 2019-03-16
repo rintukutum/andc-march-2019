@@ -1,0 +1,140 @@
+guest@AND030:~$ R
+
+R version 3.5.3 (2019-03-11) -- "Great Truth"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # store into an variable
+> set.seed(1029)
+> myValues <- rnorm(n=100,mean=10,sd=10)
+> myMat <- matrix(
++   data = myValues,
++   nrow = 20,
++   ncol = 5
++ )
+> myMat
+           [,1]       [,2]       [,3]      [,4]      [,5]
+ [1,] -3.922473  1.8762542 -7.3267289 14.431694 10.598141
+ [2,]  2.521513  2.7454462 11.2258101 -5.339663 -1.277963
+ [3,] 10.634051  4.4284264  6.9599914 25.137296 13.485829
+ [4,]  5.725431 10.3644153 -3.6559760 10.097678 13.133021
+ [5,] 16.326969  8.0997737 20.2708989  7.624466 15.920546
+ [6,] -2.788691 25.6013437 -1.7796432 15.043653  8.540132
+ [7,]  5.840886 19.4710846 -6.9809607 -1.069536  6.320859
+ [8,]  3.585142 -5.3531132  6.1355671  8.792524  1.424076
+ [9,] -5.428284 27.5475963 22.9967841  7.262024 18.081730
+[10,] -6.331111 -3.7390560  1.8486748 12.206055 12.656574
+[11,] 10.078229  0.3875497  4.7845190  6.936082  3.317211
+[12,]  1.863039 11.3426959 14.5652578  5.837913  7.176868
+[13,] -3.962816  0.9821964 21.5164438 21.233748 15.828181
+[14,] 14.905968 17.2505511  0.8995513  8.025811  6.826998
+[15,] 17.141996 24.1375679 18.2387014 11.597956  7.381603
+[16,] 23.498761  8.0062941  4.6353051  2.682848 26.075471
+[17,] 16.538205 14.6737320 -2.9366207  6.517168 14.849976
+[18,] 10.748837 15.6482056 10.8597578  9.621994  4.695405
+[19,] 14.375789 15.9022165 18.9058772 17.873786 16.060076
+[20,] 18.968933 18.3265189 10.9417111 12.317804  7.418797
+> apply(myMat, 1, sum)
+ [1] 15.656887  9.875144 60.645594 35.664570 68.242653 44.616795 23.582333
+ [8] 14.584197 70.459851 16.641136 25.503591 40.785774 55.597752 47.908880
+[15] 78.497824 64.898679 49.642460 51.574199 83.117744 67.973765
+> apply(myMat, 2, 3, sum)
+Error in match.fun(FUN) : '3' is not a function, character or symbol
+> sum(myMat[3,2])
+[1] 4.428426
+> sum(myMat[1,] + [2,])
+Error: unexpected '[' in "sum(myMat[1,] + ["
+> sum(myMat[1,]+[2,])
+Error: unexpected '[' in "sum(myMat[1,]+["
+> sum(myMat[1,],myMat[2,])
+[1] 25.53203
+> sum(myMat[1:3])
+[1] 9.233091
+> sum = myMat[3,2]
+> 
+> sum(myMat(c[1,3]))
+Error in myMat(c[1, 3]) : could not find function "myMat"
+> sum(myMat[c(1,3)]
++ sum(myMat[c(1,3)])
+Error: unexpected symbol in:
+"sum(myMat[c(1,3)]
+sum"
+> 
+> 
+> 
+> 
+> sum(myMat[c(1,3)])
+[1] 6.711578
+> sum[myMat[,c(1,3)]
++ sum(myMat[,c(1,3)])\
+Error: unexpected symbol in:
+"sum[myMat[,c(1,3)]
+sum"
+> sum(myMat[,c(1,3)])
+[1] 302.4253
+> apply()
+Error in match.fun(FUN) : argument "FUN" is missing, with no default
+> apply()
+Error in match.fun(FUN) : argument "FUN" is missing, with no default
+> mat
+     [,1]
+[1,]    1
+[2,]    2
+[3,]    3
+[4,]   45
+> nums = sample(1:20,15)
+> mat = matrix(data = nums, ncol = 3)
+> mat
+     [,1] [,2] [,3]
+[1,]    4   11    9
+[2,]    8    5    7
+[3,]   19    1    6
+[4,]   13   18    2
+[5,]   15   12    3
+> mat <= 5
+      [,1]  [,2]  [,3]
+[1,]  TRUE FALSE FALSE
+[2,] FALSE  TRUE FALSE
+[3,] FALSE  TRUE FALSE
+[4,] FALSE FALSE  TRUE
+[5,] FALSE FALSE  TRUE
+> idx = mat <= 5
+> idx
+      [,1]  [,2]  [,3]
+[1,]  TRUE FALSE FALSE
+[2,] FALSE  TRUE FALSE
+[3,] FALSE  TRUE FALSE
+[4,] FALSE FALSE  TRUE
+[5,] FALSE FALSE  TRUE
+> mat[idx]
+[1] 4 5 1 2 3
+> sum(mat[idx])
+[1] 15
+> mat(1:2,1:2)
+Error in mat(1:2, 1:2) : could not find function "mat"
+> mat[1:2,1:2]
+     [,1] [,2]
+[1,]    4   11
+[2,]    8    5
+> set.seed(107)
+> nums = sample(1:20,15)
+> nums
+ [1] 11  1 10 19  3  8  5  9  4 17  2 20 18 12 16
+> 
+
