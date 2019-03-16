@@ -21,11 +21,14 @@ for(i in 1:nRows){
 	}
 }
 
+```
+
+## apply
+```{R}
 # row sum
 apply(mat,1,sum)
 
 # col sum
 apply(mat,2,sum)
-
 ```
 
