@@ -1,4 +1,6 @@
+
 # Name, email address and contact number
 - Rintu Kutum, rintu.kutum@igib.in, 7838369344
-- Ashwin uday, ashwinuday22@gmail.com, 9870152598
+- Ashwin uday, ashwinuday22@gmail.com, 9870152598, Department of Biomedical Science, ANDC, Bsc. (H) Biomedical Science
+
 
